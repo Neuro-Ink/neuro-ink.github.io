@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?"/>
+  <link rel="stylesheet" href="style.css" class="style">
+  <title>FAQs</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About Us</a>
+    <a href="index.html">HomePage</a>
+    <a class="split" id="themeButton"></a>
+  </div>
+  <div class="container">
+    <div class="center disable-select titleMain mode" id="titleMain">FAQs</div>
+
+
+    <div class="center disable-select aboutMe" id="aboutMe">
+      <h3 class="sub_header">FAQs</h3>
+      
+    </div>
+
+  </div>
+
+  <!-- Script written by python128 -->
+  <script type="text/javascript" src="quotes.js"></script>
+  <script type="text/javascript" src="themeing.js"></script>
+  <script>
+    //Script to fetch quotes.
+    function addQuote() {
+      document.getElementById("quote").innerHTML = "";
+      var quote = "";
+      var i = 0;
+      const speed = 30;
+      function quoteWriter() {
+        if (i <= quote.length) {
+          document.getElementById("quote").innerHTML += quote.charAt(i);
+          i++;
+          setTimeout(quoteWriter, speed);
+        }
+      }
+
+      const randNo = Math.floor(Math.random() * data.length);
+      var quote = data[randNo].quoteText;
+      quoteWriter();
+    }
+    addQuote();
+
+
+    // Add last-edited to the page
+    const date = new Date(document.lastModified);
+    // (WEEKDAY) Month date year
+    // (FRI) Apr 09 2025
+    const toBePrinted = "("+date.toString().split(' ').slice(0, 4).toString().replace(",", ") ").replaceAll(",", " "); 
+    document.getElementById("last_edited").innerHTML += toBePrinted;
+  </script>
+</body>
+
+</html>
