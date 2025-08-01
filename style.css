@@ -589,9 +589,9 @@ code {
 }
 
 @media (max-width: 500px) {
-  * {
-    font-size: 10px;
-  }
+  /* * { */
+    /* font-size: 10px; */
+  /* } */
   .help {
     display: flex;
     flex-wrap: wrap;
